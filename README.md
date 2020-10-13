@@ -1,9 +1,5 @@
 # AutomatedTesting2020
 
-姓名：
-
-学号：
-
 选题方向：
 
 ***
