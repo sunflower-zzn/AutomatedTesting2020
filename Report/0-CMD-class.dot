@@ -1,7 +1,2 @@
-digraph cmd_method {
-	"Lnet/mooctest/CMD" -> "Lnet/mooctest/CMDTest1"
-	"Lnet/mooctest/CMD" -> "Lnet/mooctest/CMDTest2"
-	"Lnet/mooctest/CMD" -> "Lnet/mooctest/CMDTest"
-	"Lnet/mooctest/CMD" -> "Lnet/mooctest/CMD"
-	"Lnet/mooctest/CMD" -> "Lnet/mooctest/CMDTest3"
+digraph cmd_class {
 }

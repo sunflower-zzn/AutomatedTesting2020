@@ -1,5 +1,6 @@
 import com.ibm.wala.classLoader.ShrikeBTMethod;
 import com.ibm.wala.ipa.callgraph.CGNode;
+import com.ibm.wala.ipa.callgraph.CallGraph;
 import com.ibm.wala.ipa.callgraph.cha.CHACallGraph;
 
 import java.io.BufferedReader;
@@ -54,7 +55,7 @@ public class Analysis {
         Scope scope=new Scope(this.targetPath);
         CH ch=new CH(scope.getScope());
         Entry entry=new Entry(scope.getScope(),ch.getCha());
-        CallGraph cg=new CallGraph(ch.getCha(),entry.getEps());
+        CG cg=new CG(scope.getScope(),ch.getCha(),entry.getEps());
         forEachCG(cg.getCg());
         DOT dot=new DOT(this.projectName,this.classDotSentences,this.methodDotSentences);
         try{
@@ -66,7 +67,7 @@ public class Analysis {
     }
 
 
-    public void forEachCG(CHACallGraph cg){
+    public void forEachCG(CallGraph cg){
         for(CGNode node: cg) {
             // node中包含了很多信息，包括类加载器、方法信息等，这里只筛选出需要的信息
             if(node.getMethod() instanceof ShrikeBTMethod) {
