@@ -9,28 +9,21 @@ import com.ibm.wala.ipa.callgraph.propagation.SSAPropagationCallGraphBuilder;
 import com.ibm.wala.ipa.cha.ClassHierarchy;
 
 public class CG {
-    private CallGraph cg;
+    CallGraph cg;
 
     /**
-     * 构建调用图（利用CHA算法构建调用图）
+     * 构建调用图（利用0-CFA算法构建调用图）
+     *
      * @param cha 类层次对象
      * @param eps 进入点对象
      */
-    public CG(AnalysisScope scope, ClassHierarchy cha, AllApplicationEntrypoints eps){
+    public CG(AnalysisScope scope, ClassHierarchy cha, AllApplicationEntrypoints eps) {
         try {
             AnalysisOptions options = new AnalysisOptions(scope, eps);
             SSAPropagationCallGraphBuilder builder = Util.makeZeroCFABuilder(Language.JAVA, options, new AnalysisCacheImpl(), cha, scope);
             cg = builder.makeCallGraph(options);
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
-    }
-
-    /**
-     * 返回CallGraph类的CHACallGraph对象
-     * @return CHACallGraph
-     */
-    public CallGraph getCg() {
-        return cg;
     }
 }

@@ -5,4 +5,3 @@ Lnet/mooctest/CMDTest net.mooctest.CMDTest.test()V
 Lnet/mooctest/CMDTest2 net.mooctest.CMDTest2.test6()V
 Lnet/mooctest/CMDTest2 net.mooctest.CMDTest2.test5()V
 Lnet/mooctest/CMDTest1 net.mooctest.CMDTest1.test3()V
-

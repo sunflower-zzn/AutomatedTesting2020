@@ -6,18 +6,19 @@ public class MethodNode {
     ClassNode classNode;
     List<MethodNode> predMethodNodes;
 
-    public MethodNode(String methodName){
+    public MethodNode(String methodName) {
         this.methodName = methodName;
         classNode = null;
         this.predMethodNodes = new ArrayList<MethodNode>();
     }
 
-    public void setClassName(ClassNode classNode) {
-        this.classNode = classNode;
-    }
-
-    public void addPredMethod(MethodNode methodNode){
-        if(!this.predMethodNodes.contains(methodNode)) {
+    /**
+     * 添加前继方法节点
+     *
+     * @param methodNode 方法节点
+     */
+    public void addPredMethod(MethodNode methodNode) {
+        if (!this.predMethodNodes.contains(methodNode)) {
             this.predMethodNodes.add(methodNode);
         }
     }
